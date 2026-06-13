@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Buffering from "./coponents/buffering";
-
+import DataShowing from "./coponents/dataShowing";
 function App() {
   let foodsArr = ["samosa", "idli", "vada", "khaman", "khichdi", "dal"];
   // let foodsArr = [];
@@ -12,9 +12,7 @@ function App() {
       {foodsArr.length === 0 ? <Buffering></Buffering> : null}
       {foodsArr.map((item) => (
         <ul className="list-group">
-          <li key={item} className="list-group-item">
-            {item}
-          </li>
+          <DataShowing data={item}></DataShowing>
         </ul>
       ))}
     </>
