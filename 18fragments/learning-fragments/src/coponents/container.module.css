@@ -1,0 +1,9 @@
+.containerCss {
+  width: 50%;
+  border: 1px solid black;
+  margin: 10px;
+  min-width: 200px;
+  border-radius: 5px;
+  background-color: burlywood;
+  padding: 5px;
+}
