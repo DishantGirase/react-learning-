@@ -5,19 +5,22 @@ import Buffering from "./coponents/buffering";
 import DataShowing from "./coponents/dataShowing";
 import Heading from "./coponents/heading";
 import Container from "./coponents/container";
-
+import InputItems from "./coponents/inputItems";
 function App() {
   let foodsArr = ["samosa", "idli", "vada", "khaman", "khichdi", "dal"];
   // let foodsArr = [];
-
+  const handleData = (event) => {
+    console.log(`${props.data} is added to cart`);
+  };
   return (
     <>
       {" "}
       <Container>
         <Heading className={`${Style.headingCss}`}></Heading>
         {foodsArr.length === 0 ? <Buffering></Buffering> : null}
+        <InputItems></InputItems>
         {foodsArr.map((item) => (
-          <DataShowing data={item}></DataShowing>
+          <DataShowing data={item} handleData={handleData}></DataShowing>
         ))}
       </Container>
       <Container>
