@@ -1,5 +1,5 @@
 import styles from "./inputItems.module.css";
-const InputItems = () => {
+const InputItems = ({ handleOnChangeOnUserEnter, handleAdd }) => {
   const handleChangeEvent = (event) => {
     console.log(event.target.value);
   };
@@ -9,8 +9,12 @@ const InputItems = () => {
         type="text"
         placeholder="enter your items here"
         className={styles.inputSection}
-        onChange={handleChangeEvent}
+        onChange={(event) => {
+          handleChangeEvent(event);
+          handleOnChangeOnUserEnter(event);
+        }}
       />
+      <button onClick={handleAdd}>add</button>
     </>
   );
 };
